@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Tutorial 103: REST to File Integration | oic-site-repository</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Tutorial 103: REST to File Integration" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/tutorial103.html" />
+<meta property="og:url" content="http://localhost:4000/tutorial103.html" />
+<meta property="og:site_name" content="oic-site-repository" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Tutorial 103: REST to File Integration","url":"http://localhost:4000/tutorial103.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=c0b30b70427a97137c1cb974c7b5d84725219ea0">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="http://localhost:4000/">oic-site-repository</a></h1>
+      
+
+      <h1 id="tutorial-103-rest-to-file-integration">Tutorial 103: REST to File Integration</h1>
+
+<h2 id="creating-an-api-that-can-write-to-a-file">Creating an API that can write to a file.</h2>
+
+<p>This tutorial explains how to create an integration that will use the REST adapter to accept a request that will trigger the File adapter to write a file.</p>
+
+<p>You will write a file to an on-premise system so the file adapter has been configured to use an agent.</p>
+
+<h3 id="part-1-create-the-integration">Part 1: Create the Integration</h3>
+
+<p>From the designer menu, choose <strong>Integrations</strong>.</p>
+
+<p>Click on the <strong>Create</strong> button to start creating a new integration:</p>
+
+<p><img src="images/Screen Shot 2018-03-05 at 7.59.50 AM.png" alt="Create Integration" /></p>
+
+<p>Choose the <strong>Style: Template with Pattern: Map Data</strong></p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%208.02.54%20AM.png" alt="Select Style/Pattern" /></p>
+
+<p>Name the Integration:  <code class="highlighter-rouge">REST to File Integtration &lt;your initials&gt;</code></p>
+
+<p>The identifier and version number are automatically populated. Optionally, supply a description.</p>
+
+<p>Supply the Package Name <code class="highlighter-rouge">&lt;your initials&gt;_WORKSHOP</code>as shown in the picture</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%208.06.38%20AM.png" alt="Screen Shot 2018-03-05 at 8.06.38 AM" /></p>
+
+<p>Click the <strong>Create</strong> button.</p>
+
+<p>The integration has been created. Click the <strong>Save</strong> button to save the work so far.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%208.09.23%20AM.png" alt="Screen Shot 2018-03-05 at 8.09.23 AM" /></p>
+
+<p>Now, you will work on the integration.</p>
+
+<h3 id="part-2-configure-the-rest-adapter">Part 2: Configure the REST Adapter</h3>
+
+<p>Type your initials in the connections search box on the right to find the connections that you previously created.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%208.11.58%20AM.png" alt="Screen Shot 2018-03-05 at 8.11.58 AM" /></p>
+
+<p>Choose the <code class="highlighter-rouge">Local REST &lt;your initials&gt;</code> connection.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%208.15.03%20AM.png" alt="Screen Shot 2018-03-05 at 8.15.03 AM" /></p>
+
+<p>A wizard will appear to allow you to start configuring the REST interface.</p>
+
+<p>Call the endpoint <strong><code class="highlighter-rouge">WritePersonToFile</code></strong></p>
+
+<p>Provide a description for the endpoint.</p>
+
+<p>The endpoint’s relative resource URI is: <code class="highlighter-rouge">/log/person</code></p>
+
+<p>Select <code class="highlighter-rouge">POST</code>as the action that the endpoint performs.</p>
+
+<p>Check the box: <code class="highlighter-rouge">Configure a request payload for this endpoint</code></p>
+
+<p>Verify that your configuration matches the screenshot below before clicking next.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%208.25.55%20AM.png" alt="Screen Shot 2018-03-05 at 8.25.55 AM" /></p>
+
+<p>Based upon your selections the wizard will take you to the next confguration screen. You will only need to complete some of the configuration items listed down the left hand side of the wizard.</p>
+
+<p>Since  you didn’t check the box to add any request parameters, the wizard moves ahead to configuring the request which we did indicate we wanted to do when we checked the request payload box on the previous screen.</p>
+
+<p>Choose the radio button <strong>JSON Sample</strong> so you can supply a sample request format using JSON (Java Script Object Notation). Also select <strong>JSON</strong> as the type of payload  you want the endpoint to receive.</p>
+
+<p>Click on the link called <code class="highlighter-rouge">&lt;&lt;&lt;&lt; inline &gt;&gt;&gt;&gt;</code> after enter sample JSON to supply a sample format.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%208.33.38%20AM.png" alt="Screen Shot 2018-03-05 at 8.33.38 AM" /></p>
+
+<p>Copy and paste the following text in the box that pops-up:</p>
+
+<p><code class="highlighter-rouge">{  "PersonId" : "300000157866799",  "Name" : "Lloyd"  }</code></p>
+
+<p><em>If you get an error message, you may need to re-type all of the quotation marks to get the correct character.</em></p>
+
+<p><strong>OR</strong> you could download this file to your computer <a href="/misc/person.json">person.json</a> and then use the <strong>Browse</strong> button to upload it to the cloud.</p>
+
+<p>Then click the <strong>OK</strong> button.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%208.41.20%20AM.png" alt="Screen Shot 2018-03-05 at 8.41.20 AM" /></p>
+
+<p>Choose <strong>Next</strong> to move to the next configuation item in the wizard.</p>
+
+<p>Since no more configuration is required, the wizard shows the <strong>Summary</strong> tab.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%208.46.13%20AM.png" alt="Screen Shot 2018-03-05 at 8.46.13 AM" /></p>
+
+<p>Click <strong>Done</strong></p>
+
+<p>The integration is not finished yet, but click on the <strong>Save</strong> button to save the work you have done so far.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%208.47.39%20AM.png" alt="Screen Shot 2018-03-05 at 8.47.39 AM" /></p>
+
+<h3 id="part-3-configure-the-file-adapter">Part 3: Configure the File Adapter</h3>
+
+<p>Notice that the percentage completion indicator has increased but it is not yet at 100% since we have not configured a connection to invoke.</p>
+
+<p>Drag the **File <your initials="">** connection to the right hand side on top of **Drag and Drop an Invoke**</your></p>
+
+<p>A wizard will pop-up allowing you to configure the file adapter connection.</p>
+
+<p>Call the endpoint <strong>LogPersonToFile</strong></p>
+
+<p>Leave the default options:</p>
+
+<p>Yes - define a schema for this endpoint and</p>
+
+<p>Create a new schema from a CSV file</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%208.51.41%20AM.png" alt="Screen Shot 2018-03-05 at 8.51.41 AM" /></p>
+
+<p>Click the <strong>Next</strong> button to move to the next section of the configuration wizard.</p>
+
+<p>Specify the Output Directory: <code class="highlighter-rouge">/data/tutorial103</code></p>
+
+<p><em>Note: This is a directory on the computer where the agent is running since this adapter is configured to use an agent.</em></p>
+
+<p>Specify a File Name Pattern: <code class="highlighter-rouge">&lt;your initials&gt;_Person_%SEQ%.txt</code></p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%208.57.36%20AM.png" alt="Screen Shot 2018-03-05 at 8.57.36 AM" /></p>
+
+<p>Then click the <strong>Next</strong> button.</p>
+
+<p>Either download this sample CSV file: <a href="/misc/PersonId.csv">PersonId.csv</a></p>
+
+<p>OR Create a file on your own computer that is called <strong>PersonId.csv</strong> with the following two lines of content.</p>
+
+<p><code class="highlighter-rouge">PersonId,Name</code>
+<code class="highlighter-rouge">300000157866789,Lloyd</code></p>
+
+<p>Click on the **Browse… button and choose the PersonId.csv on your computer.</p>
+
+<p>Enter the Record Name: <code class="highlighter-rouge">Person</code></p>
+
+<p>Enter the Recordset Name: <code class="highlighter-rouge">People</code></p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.09.56%20AM.png" alt="Screen Shot 2018-03-05 at 9.09.56 AM" /></p>
+
+<p>Notice that the fields PersonId and Name were populated as Mandatory and the type format String was set.  We will leave these defaults, but in the future you could change as needed.</p>
+
+<p>Click the <strong>Next</strong> button. The configuration wizard moves to the summary section.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.15.07%20AM.png" alt="Screen Shot 2018-03-05 at 9.15.07 AM" /></p>
+
+<p>Then click the <strong>Done</strong> button.</p>
+
+<p>Notice that the integration updates and the percentage completion updates. Click the <strong>Save</strong> button.</p>
+
+<h3 id="part-4-perform-the-mapping">Part 4: Perform the Mapping</h3>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.15.53%20AM.png" alt="Screen Shot 2018-03-05 at 9.15.53 AM" /></p>
+
+<p>You will find in the middle an icon linking the two connections called <strong>Click Below to Create Map</strong></p>
+
+<p>Click that icon to start to create a mapping. Click the <strong>+ icon</strong> to create a new mapping.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.18.27%20AM.png" alt="Screen Shot 2018-03-05 at 9.18.27 AM" /></p>
+
+<p>A mapping wizard will appear. Drag from the <code class="highlighter-rouge">PersonId</code> in the source to the <code class="highlighter-rouge">PersonId</code> under <code class="highlighter-rouge">People/Person</code>.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.20.52%20AM.png" alt="Screen Shot 2018-03-05 at 9.20.52 AM" /></p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.22.33%20AM.png" alt="Screen Shot 2018-03-05 at 9.22.33 AM" /></p>
+
+<p>Do the same for the <code class="highlighter-rouge">Name</code> field.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.25.18%20AM.png" alt="Screen Shot 2018-03-05 at 9.25.18 AM" /></p>
+
+<p>Then click the <strong>Validate</strong> button and then the <strong>Close</strong> button.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.26.59%20AM.png" alt="Screen Shot 2018-03-05 at 9.26.59 AM" /></p>
+
+<p>Click the <strong>Save</strong> button. Notice the completion percentage is not yet at 100%. This is because we need to configure the tracking option. Choose the menu next to the Last Saved field.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.29.42%20AM.png" alt="Screen Shot 2018-03-05 at 9.29.42 AM" /></p>
+
+<p>Choose <strong>Tracking</strong></p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.31.10%20AM.png" alt="Screen Shot 2018-03-05 at 9.31.10 AM" /></p>
+
+<p>Drag the <code class="highlighter-rouge">PersonId</code> from the left to the beginning of the first box under the <strong>Tracking Field</strong> column.</p>
+
+<p><em>You’ll notice that the background of the field turns light blue when the field is ready to be dropped.</em></p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.32.09%20AM.png" alt="Screen Shot 2018-03-05 at 9.32.09 AM" /></p>
+
+<p>Drag the <code class="highlighter-rouge">Name</code> to the second row under Tracking field. Only the first field will get a green check-mark as the primary tracking field.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.32.17%20AM.png" alt="Screen Shot 2018-03-05 at 9.32.17 AM" /></p>
+
+<p>Click <strong>Save</strong></p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.36.33%20AM.png" alt="Screen Shot 2018-03-05 at 9.36.33 AM" /></p>
+
+<p>Notice that the the integration is now at 100% and ready to activate. Click <strong>Close</strong></p>
+
+<p>Notice that there is an actions menu associated with this integration.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%209.39.47%20AM.png" alt="Screen Shot 2018-03-05 at 9.39.47 AM" /></p>
+
+<p>You can activate from this menu or use switch button to activate the integration.</p>
+
+<p>A pop-up box will appear to allow you to configure some options for the activation.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2010.05.45%20AM.png" alt="Screen Shot 2018-03-05 at 10.05.45 AM" /></p>
+
+<p>Uncheck the box to contribute to the recommendations engine.</p>
+
+<p>Check the box to <strong>Enable Tracing</strong> and <strong>Include payload</strong></p>
+
+<p>In a production environment, you may not want to enable tracing if you have sensitive information that you do not want appearing in the logs, but for development of the integrations it’s good to do until you are sure that your integration is working as expected. It will make debugging any problems much easier.</p>
+
+<p>A message appears showing that the integration is activating.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2010.09.27%20AM.png" alt="Screen Shot 2018-03-05 at 10.09.27 AM" /></p>
+
+<p>You will need to click on the <strong>Refresh</strong> icon to see if the integation has finished activating.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2010.10.54%20AM.png" alt="Screen Shot 2018-03-05 at 10.10.54 AM" /></p>
+
+<p>Then you can click on the link provided in the green message bar to see the metadata related to the integration. A new tab should open in your browser which contains all the details about this integration including the Endpoint URL, the Swagger definition and the resource details including a sample of the request.</p>
+
+<p>If need to find the metadata link for this integration, after you have closed the green notification, you can find it using the gear icon that appears next to the activation switch.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2011.19.21%20PM.png" alt="Screen Shot 2018-03-05 at 11.19.21 PM" /></p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2010.13.21%20AM.png" alt="Screen Shot 2018-03-05 at 10.13.21 AM" />The integration is now ready to run. It’s best to use a tool for testing REST interfaces (for example Postman or SOAP-UI) to test the interface. In this tutorial, we will use Postman which is available as a stand-alone install or a Chrome browser plug-in.</p>
+
+<p>If you don’t already have a tool that you are very comfortable using, you should download and install Postman from: <a href="https://www.getpostman.com/apps">https://www.getpostman.com/apps</a></p>
+
+<p>In Postman, set-up a <strong>POST</strong> request using the Endpoint URL.</p>
+
+<p><em>NOTE: Be sure to use your own endpoint URL from the Endpoint Description page  (don’t paste into Postman the URL one that ends in /metadata, but you can use that link in your browser to find the endpoint URL).</em></p>
+
+<p>Copy it from your own Endpoint Description page. It will be in a format that contains your initials in the name.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2010.33.46%20AM.png" alt="Screen Shot 2018-03-05 at 10.33.46 AM" /></p>
+
+<p>Set the Authorization to <strong>Basic Auth</strong> and supply the username and password provided to you by your instructor. (e.g User01)</p>
+
+<p>Click on the <strong>Body</strong> tab in Postman.</p>
+
+<p>Choose the format <strong>raw</strong> and from the drop-down list <strong>choose the JSON (application/json)</strong> option (from the drop-down list next to the binary radio button).</p>
+
+<p>Copy the request sample payload and paste it in the body section. You can optionally change the value for the<code class="highlighter-rouge">PersonId</code> string and the <code class="highlighter-rouge">Name</code> string to a different value. You should use you own name to make it easier for the instructor to find the file on the server running the connectivity agent.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2010.36.18%20AM.png" alt="Screen Shot 2018-03-05 at 10.36.18 AM" /></p>
+
+<p>Notice that <code class="highlighter-rouge">Authorization</code> and <code class="highlighter-rouge">Content-Type</code> Headers were generated automatically. You do not need to adjust these values.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2010.40.05%20AM.png" alt="Screen Shot 2018-03-05 at 10.40.05 AM" /></p>
+
+<p>Click on the <strong>Send</strong> button to send the request.</p>
+
+<p>Since this integration is very simple, you will only see a message as a status like: <code class="highlighter-rouge">202 Accepted</code>without any response since we didn’t configure one.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2010.42.48%20AM.png" alt="Screen Shot 2018-03-05 at 10.42.48 AM" /></p>
+
+<p>Ask your instructor to check and see if your file was created on the computer running the agent.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2010.30.37%20AM.png" alt="Screen Shot 2018-03-05 at 10.30.37 AM" /></p>
+
+<p>If it did, then you have seen how someone with the appropriate security permissions can make a call to an interface in the cloud and create a file on the local file system which was configured with the Oracle Integration Cloud (OIC) connectivity agent.</p>
+
+<p><strong>Congratulations!</strong> You have built your first integration using Oracle Integration Cloud in a browser using Drag-and-Drop without writing any code and you were able to integrate seemlessly between cloud and on-premise environments simply by associating an agent configuration with one of the adapter connections.</p>
+
+<p>You can now save this integration on your local file system by choosing the <strong>Export</strong> option from the integration’s menu.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2010.50.26%20AM.png" alt="Screen Shot 2018-03-05 at 10.50.26 AM" /></p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2010.57.15%20AM.png" alt="Screen Shot 2018-03-05 at 10.57.15 AM" /></p>
+
+<p>The resulting .iar file can be put in source control and/or imported into the QA or Production environments. You will need to configure the connection settings and user name and passwords after you import it into another environment. The security infomation (i.e. usernames and passwords) is not exported with the integration.</p>
+
+<p><img src="/images/tutorial103/Screen%20Shot%202018-03-05%20at%2010.53.45%20AM.png" alt="Screen Shot 2018-03-05 at 10.53.45 AM" /></p>
+
+<p>This concludes tutorial103. You now have a basic understanding of how Oracle Integration Cloud integrations are created and are ready to build more complex examples.</p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>
