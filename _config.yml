@@ -4,7 +4,7 @@ title: OIC
 description: > # this means to ignore newlines until "baseurl:"
   Tutorials for Oracle Integration Cloud
 permalink: ':title/'
-baseurl: "/oic" # the subpath of your site, e.g. /blog
+#baseurl: "/oic" # the subpath of your site, e.g. /blog
 url: "https://lloyd-e-williams.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 ## Social

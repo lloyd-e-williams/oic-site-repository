@@ -1,4 +1,7 @@
 
+---
+typora-copy-images-to: ./images/tutorial104
+---
 This tutorial shows you how to monitor integrations.
 
 From the left-side menu, choose **Monitoring**:
