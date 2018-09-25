@@ -1,0 +1,45 @@
+{
+    "workshop": {
+        "title": "Journey To The Cloud: Oracle Integration Cloud Hands-on Workshop",
+        "description": "A hands-on event to explore Oracle’s Integration Cloud capabilities",
+        "theme": "ttc",
+        "interactive": "https://launch.oracle.com/?ttcicsdeveloper",
+        "labs": [{
+                "number": "1",
+                "filename": "Home.md",
+                "title": "Home",
+                "description": "Welcome to the Oracle Integration Cloud workshop"
+            },
+            {
+                "number": "100",
+                "filename": "tutorial100.md",
+                "title": "Tutorial 100: Getting Started",
+                "description": "This explains how to get started doing the workshop."
+            },
+            {
+                "number": "101",
+                "filename": "tutorial101.md",
+                "title": "Tutorial 101: Using the REST Adapter",
+                "description": "This section shows you how to set-up a REST adapter."
+            },
+            {
+                "number": "102",
+                "filename": "tutorial102.md",
+                "title": "Tutorial 102: Using the File Adapter",
+                "description": "This section shows you how to set-up a file adapter."
+            },
+            {
+                "number": "103",
+                "filename": "tutorial103.md",
+                "title": "Tutorial 103: REST to File Integration",
+                "description": "This section explains how to create a REST endpoint that will write to a file."
+            },
+            {
+                "number": "104",
+                "filename": "tutorial104.md",
+                "title": "Tutorial 104: Monitoring",
+                "description": "This section shows you how to access the monitoring tools."
+            }
+        ]
+    }
+}
