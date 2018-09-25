@@ -1,6 +1,6 @@
 # Tutorial 100: Getting Started
 
-## Working with an Oracle Integration Cloud Instance
+## Working with Oracle Integration Cloud
 
 ### Part 1: Login to Oracle Cloud
 

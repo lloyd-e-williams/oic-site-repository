@@ -1,6 +1,6 @@
 # Tutorial 100: Getting Started
 
-## Working with an Oracle Integration Cloud Instance
+## Working with Oracle Integration Cloud
 
 ### Part 1: Login to Oracle Cloud
 
@@ -16,6 +16,6 @@ Use the username and password provided by your instructor (e.g. User01)
 
 Click on **Integrations**
 
-![](./images/tutorial100/1a.png)
+![1a](./images/tutorial100/1a.png)
 
 You are now ready to start Tutorial 101: Using the REST Adapter.

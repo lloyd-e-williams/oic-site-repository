@@ -12,13 +12,13 @@
             },
             {
                 "number": "100",
-                "filename": "tutorial100.html",
+                "filename": "tutorial100.md",
                 "title": "Tutorial 100: Getting Started",
                 "description": "This explains how to get started doing the workshop."
             },
             {
                 "number": "101",
-                "filename": "tutorial101.html",
+                "filename": "tutorial101.md",
                 "title": "Tutorial 101: Using the REST Adapter",
                 "description": "This section shows you how to set-up a REST adapter."
             },
