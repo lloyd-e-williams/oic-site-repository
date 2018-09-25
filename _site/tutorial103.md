@@ -3,11 +3,11 @@
 
 ## Creating an API that can write to a file.
 
+### Part 1: Create the Integration
+
 This tutorial explains how to create an integration that will use the REST adapter to accept a request that will trigger the File adapter to write a file.
 
 You will write a file to an on-premise system so the file adapter has been configured to use an agent.  
-
-### Part 1: Create the Integration
 
 From the designer menu, choose **Integrations**.
 
